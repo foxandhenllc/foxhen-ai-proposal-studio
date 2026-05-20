@@ -15,6 +15,7 @@ Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity
 - Structures proposal scope: assumptions, exclusions, deliverables, acceptance criteria, timeline, and risk flags.
 - Calculates a transparent complexity score, client-facing price range, and private internal estimate view.
 - Exports a client-friendly Markdown proposal, AI prompt pack JSON, and full proposal snapshot JSON.
+- Autosaves the editable project in browser localStorage, with reset-to-sample and portable project JSON import/export.
 - Runs fully static in React + TypeScript + Vite with no backend, auth, secrets, real data, or live model calls.
 
 ## Use Cases
@@ -29,6 +30,7 @@ Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity
 - `src/data/proposalFixture.ts`: fictional sample proposal data.
 - `src/lib/proposalTypes.ts`: proposal domain types.
 - `src/lib/proposalEngine.ts`: complexity, pricing, and internal estimate logic.
+- `src/lib/localProject.ts`: browser-only localStorage and project JSON helpers.
 - `src/exporters/markdown.ts`: client-friendly proposal export.
 - `src/exporters/json.ts`: AI prompt pack and proposal snapshot exports.
 - `src/components`: proposal builder UI components.
@@ -52,7 +54,7 @@ npm run dev
 ## Validation
 
 ```bash
-npm run test:smoke
+npm test
 npm run typecheck
 npm run build
 ```
