@@ -1,128 +1,169 @@
-export const sample = {
+export type ItemStatus = "backlog" | "active" | "blocked" | "ready" | "done";
+
+export type WorkItem = {
+  id: string;
+  title: string;
+  category: string;
+  owner: string;
+  status: ItemStatus;
+  priority: number;
+  effort: number;
+  friction: number;
+  value: number;
+  due: string;
+  notes: string;
+};
+
+export type QualityCheck = {
+  id: string;
+  label: string;
+  passed: boolean;
+  weight: number;
+};
+
+export const sample: {
+  repoName: string;
+  title: string;
+  subtitle: string;
+  serviceLine: string;
+  description: string;
+  repositoryUrl: string;
+  liveDemoUrl: string;
+  theme: { accent: string; accent2: string; ink: string; soft: string; warm: string };
+  items: WorkItem[];
+  checks: QualityCheck[];
+  deliverables: string[];
+} = {
   "repoName": "foxhen-ai-proposal-studio",
   "title": "AI Proposal Studio",
-  "subtitle": "Scope, price, and package work faster",
+  "subtitle": "proposal package",
   "serviceLine": "AI-assisted estimating",
-  "heroTitle": "Turn a rough job post into a scoped proposal package.",
-  "heroCopy": "A simulated proposal desk that extracts requirements, flags risk, builds milestones, and produces an estimate that is ready for a human final pass.",
-  "primaryAction": "Generate scope",
-  "secondaryAction": "Review risks",
+  "description": "Convert rough job posts into scoped milestones, risk flags, estimates, and buyer-ready proposal notes.",
   "repositoryUrl": "https://github.com/foxandhenllc/foxhen-ai-proposal-studio",
   "liveDemoUrl": "https://foxhen-ai-proposal-studio.vercel.app",
   "theme": {
-    "accent": "#3a2d73",
-    "accent2": "#e7b86d",
+    "accent": "#48317d",
+    "accent2": "#e8b86d",
     "ink": "#090816",
-    "soft": "#f0eefc",
-    "warm": "#fff3da",
-    "surface": "#fffaf4",
-    "muted": "#5c667a",
-    "border": "rgba(7, 18, 31, 0.12)"
+    "soft": "#f1edff",
+    "warm": "#fff3dc"
   },
-  "metrics": [
+  "items": [
     {
-      "label": "Scope confidence",
-      "value": "89%",
-      "note": "+34 pts"
-    },
-    {
-      "label": "Estimate band",
-      "value": "$450-$900",
-      "note": "fixed-fee ready"
-    },
-    {
-      "label": "Risk flags",
-      "value": "5",
-      "note": "2 require approval"
-    }
-  ],
-  "stages": [
-    {
-      "label": "Parse brief",
-      "detail": "Extract buyer goal, required deliverable, deadline, and evidence needed before quoting.",
-      "status": "ready",
-      "owner": "AI",
-      "index": 1
-    },
-    {
-      "label": "Shape offer",
-      "detail": "Convert the brief into an outcome-focused fixed-fee package with tight acceptance criteria.",
-      "status": "active",
-      "owner": "Studio",
-      "index": 2
-    },
-    {
-      "label": "Price guardrail",
-      "detail": "Compare effort, uncertainty, and payout timing before recommending a proposal band.",
-      "status": "waiting",
+      "id": "ai--1",
+      "title": "Brief parser",
+      "category": "Intake",
       "owner": "Chris",
-      "index": 3
+      "status": "active",
+      "priority": 5,
+      "effort": 2,
+      "friction": 1,
+      "value": 5,
+      "due": "Today",
+      "notes": "Sample proposal package work item for ai-assisted estimating."
     },
     {
-      "label": "Handoff",
-      "detail": "Produce reusable proposal notes, milestone copy, and follow-up questions.",
-      "status": "queued",
-      "owner": "Ops",
-      "index": 4
+      "id": "ai--2",
+      "title": "Scope card",
+      "category": "Build",
+      "owner": "Fox & Hen",
+      "status": "backlog",
+      "priority": 4,
+      "effort": 4,
+      "friction": 2,
+      "value": 4,
+      "due": "24h",
+      "notes": "Sample proposal package work item for ai-assisted estimating."
+    },
+    {
+      "id": "ai--3",
+      "title": "Risk matrix",
+      "category": "Review",
+      "owner": "Buyer",
+      "status": "blocked",
+      "priority": 3,
+      "effort": 3,
+      "friction": 4,
+      "value": 4,
+      "due": "48h",
+      "notes": "Sample proposal package work item for ai-assisted estimating."
+    },
+    {
+      "id": "ai--4",
+      "title": "Question list",
+      "category": "Export",
+      "owner": "Automation",
+      "status": "ready",
+      "priority": 4,
+      "effort": 2,
+      "friction": 2,
+      "value": 3,
+      "due": "This week",
+      "notes": "Sample proposal package work item for ai-assisted estimating."
+    },
+    {
+      "id": "ai--5",
+      "title": "Estimate band",
+      "category": "Intake",
+      "owner": "QA",
+      "status": "backlog",
+      "priority": 2,
+      "effort": 1,
+      "friction": 1,
+      "value": 3,
+      "due": "Waiting",
+      "notes": "Sample proposal package work item for ai-assisted estimating."
+    },
+    {
+      "id": "ai--6",
+      "title": "Proposal packet",
+      "category": "Build",
+      "owner": "Chris",
+      "status": "done",
+      "priority": 5,
+      "effort": 5,
+      "friction": 3,
+      "value": 5,
+      "due": "Next pass",
+      "notes": "Sample proposal package work item for ai-assisted estimating."
     }
   ],
-  "workItems": [
+  "checks": [
     {
-      "title": "Requirement scan",
-      "detail": "Separate must-have work from nice-to-have extras",
-      "status": "ready"
+      "id": "payer",
+      "label": "Payer or owner is clear",
+      "passed": true,
+      "weight": 18
     },
     {
-      "title": "Milestone draft",
-      "detail": "Create 2-sprint delivery shape",
-      "status": "active"
+      "id": "deliverable",
+      "label": "Deliverable has acceptance criteria",
+      "passed": true,
+      "weight": 18
     },
     {
-      "title": "Question list",
-      "detail": "Identify missing access and examples",
-      "status": "waiting"
+      "id": "friction",
+      "label": "Account/access friction is documented",
+      "passed": false,
+      "weight": 14
     },
     {
-      "title": "Proposal packet",
-      "detail": "Assemble cover note and deliverables",
-      "status": "queued"
+      "id": "handoff",
+      "label": "Handoff package is generated",
+      "passed": false,
+      "weight": 16
+    },
+    {
+      "id": "reuse",
+      "label": "Repeatable pipeline note exists",
+      "passed": true,
+      "weight": 12
     }
   ],
   "deliverables": [
-    {
-      "title": "Scope card",
-      "detail": "A concise buyer-goal summary with acceptance criteria."
-    },
-    {
-      "title": "Estimate matrix",
-      "detail": "A visible tradeoff table for speed, certainty, and effort."
-    },
-    {
-      "title": "Reusable prompt kit",
-      "detail": "Prompt blocks and QA checks that speed future proposals."
-    }
-  ],
-  "timeline": [
-    {
-      "time": "0-1 hr",
-      "detail": "Read post and extract decision points"
-    },
-    {
-      "time": "1-2 hrs",
-      "detail": "Build proposal package and risk matrix"
-    },
-    {
-      "time": "2-3 hrs",
-      "detail": "Finalize quote and human approval notes"
-    }
-  ],
-  "proof": [
-    "Demonstrates AI workflow setup without relying on live provider calls.",
-    "Useful for Upwork leads who need structured estimates fast.",
-    "Keeps final send decisions gated behind a human review."
+    "Ranked board",
+    "Editable item inspector",
+    "Readiness checklist",
+    "Exportable handoff report"
   ]
-} as const;
-
-export type StageStatus = "ready" | "active" | "waiting" | "queued";
-export type DemoStage = (typeof sample.stages)[number];
-export type WorkItem = (typeof sample.workItems)[number];
+};
