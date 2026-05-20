@@ -104,7 +104,7 @@ function App() {
     const prompt = [
       `Fork AI Proposal Studio as a public-safe client demo.`,
       `Service line: AI-assisted estimating.`,
-      "Keep all records fictional, remove secrets, update sample data in src/data.ts, and run npm run build before publishing.",
+      "Keep all records fictional, remove credentials, update sample data in src/data.ts, and run npm run build before publishing.",
     ].join(" ");
     if (navigator.clipboard) {
       void navigator.clipboard.writeText(prompt).then(() => {
