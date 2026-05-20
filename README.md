@@ -1,6 +1,6 @@
 # AI Proposal Studio
 
-Public Fox & Hen working sample for **AI-assisted estimating**.
+Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity into a structured client proposal package.
 
 ![Demo screenshot](docs/demo-screenshot.png)
 
@@ -9,42 +9,60 @@ Public Fox & Hen working sample for **AI-assisted estimating**.
 - Demo: [https://foxhen-ai-proposal-studio.vercel.app](https://foxhen-ai-proposal-studio.vercel.app)
 - Repository: [https://github.com/foxandhenllc/foxhen-ai-proposal-studio](https://github.com/foxandhenllc/foxhen-ai-proposal-studio)
 
-## Fully Working Behaviors
+## What It Does
 
-- Search, filter, and sort the sample work board.
-- Add a new sample item and edit owner, notes, priority, value, effort, and friction.
-- Advance work status and watch readiness metrics update.
-- Run the 24-hour sprint simulation to reprioritize high-value items.
-- Toggle QA gates, generate a handoff report, and download the current board as JSON.
+- Captures client intake: problem, goal, audience, workflow, systems, budget signal, timeline, and success metric.
+- Structures proposal scope: assumptions, exclusions, deliverables, acceptance criteria, timeline, and risk flags.
+- Calculates a transparent complexity score, client-facing price range, and private internal estimate view.
+- Exports a client-friendly Markdown proposal, AI prompt pack JSON, and full proposal snapshot JSON.
+- Runs fully static in React + TypeScript + Vite with no backend, auth, secrets, real data, or live model calls.
 
-## Service Mapping
+## Use Cases
 
-This demo packages a lightweight ai-assisted estimating workflow around:
+- Scope an AI automation or internal tooling opportunity before writing a full SOW.
+- Produce a buyer-readable first-pass proposal from fictional or client-approved inputs.
+- Keep internal estimate math separate from client-facing proposal language.
+- Generate reusable prompt packs for later human-reviewed AI workflows.
 
-- Ranked board
-- Editable item inspector
-- Readiness checklist
-- Exportable handoff report
+## Source Map
 
-The app is intentionally static so prospects can inspect the flow, fork it, and replace only the fictional sample records in `src/data.ts`.
+- `src/data/proposalFixture.ts`: fictional sample proposal data.
+- `src/lib/proposalTypes.ts`: proposal domain types.
+- `src/lib/proposalEngine.ts`: complexity, pricing, and internal estimate logic.
+- `src/exporters/markdown.ts`: client-friendly proposal export.
+- `src/exporters/json.ts`: AI prompt pack and proposal snapshot exports.
+- `src/components`: proposal builder UI components.
+- `tests/proposal-export.smoke.ts`: fixture-based smoke test for proposal, Markdown, and JSON export generation.
 
-## Fork This Demo
+## Client Customization
 
-1. Replace the fictional work items in `src/data.ts` with your own public-safe sample scenario.
-2. Update colors, service copy, repository URL, and live demo URL in the same file.
-3. Keep screenshots, exported JSON, and README examples free of credentials, real customer data, and personal contacts.
-4. Run `npm run build --silent` before publishing.
-
-See `docs/forking-guide.md` for a checklist and starter client brief.
+1. Start from `docs/client-brief-template.md` and collect only fictional or client-approved facts.
+2. Replace the sample scenario in `src/data/proposalFixture.ts`.
+3. Tune scoring or pricing in `src/lib/proposalEngine.ts` if the service line needs different assumptions.
+4. Adjust Markdown or JSON export wording in `src/exporters`.
+5. Review `docs/public-safe-data.md` before publishing screenshots, exports, or forks.
 
 ## Local Run
 
 ```bash
 npm install
 npm run dev
+```
+
+## Validation
+
+```bash
+npm run test:smoke
+npm run typecheck
 npm run build
 ```
 
+A copy-ready CI workflow lives at `docs/github-actions/build.yml.example`; move it to `.github/workflows/build.yml` after GitHub auth has the `workflow` scope.
+
 ## Public-Safe Scope
 
-This is a static React/Vite demo with fictional sample data. It includes no production data, credentials, real contacts, copied customer work, backend, auth, or external service calls.
+This is a static frontend demo with fictional fixture data. It includes no production data, credentials, real contacts, backend, auth, external service calls, or live AI model calls.
+
+## License
+
+MIT — see `LICENSE`.
