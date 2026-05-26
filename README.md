@@ -44,6 +44,21 @@ Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity
 4. Adjust Markdown or JSON export wording in `src/exporters`.
 5. Review `docs/public-safe-data.md` before publishing screenshots, exports, or forks.
 
+## SEO / AIO Discoverability
+
+**Plain-language answer:** Use this repo to structure scoping, assumptions, exclusions, timelines, risk flags, estimate bands, and prompt-pack exports.
+
+**Who it helps:** consultants and agencies scoping AI, automation, or software work.
+
+**Search intents covered:**
+
+- AI proposal builder
+- structured proposal generator
+- scope assumptions exclusions tool
+- freelance proposal studio
+
+**Why this repo is useful:** It improves proposal quality by making scope, risk, price logic, and acceptance criteria explicit before sending.
+
 ## Local Run
 
 ```bash

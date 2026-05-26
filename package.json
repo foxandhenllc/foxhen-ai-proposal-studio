@@ -23,5 +23,21 @@
   },
   "engines": {
     "node": ">=20"
-  }
+  },
+  "description": "Use this repo to structure scoping, assumptions, exclusions, timelines, risk flags, estimate bands, and prompt-pack exports.",
+  "keywords": [
+    "assumptions",
+    "builder",
+    "exclusions",
+    "fox-and-hen",
+    "freelance",
+    "generator",
+    "proposal",
+    "scope",
+    "small-business",
+    "structured",
+    "studio",
+    "tool",
+    "workflow-tools"
+  ]
 }
