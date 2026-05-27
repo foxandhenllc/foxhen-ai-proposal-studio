@@ -5,7 +5,7 @@ export const sampleProposal: ProposalDraft = {
     companyName: "Fox & Hen",
     website: "https://foxandhenllc.com",
     repositoryUrl: "https://github.com/foxandhenllc/foxhen-ai-proposal-studio",
-    liveDemoUrl: "https://foxhen-ai-proposal-studio.vercel.app",
+    liveDemoUrl: "https://freetoolsforpeople.com/ai-proposal-studio",
     accent: "#48317d",
     accent2: "#e8b86d",
     ink: "#090816",

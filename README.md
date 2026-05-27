@@ -6,7 +6,7 @@ Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity
 
 ## Live Demo
 
-- Demo: [https://foxhen-ai-proposal-studio.vercel.app](https://foxhen-ai-proposal-studio.vercel.app)
+- Demo: [https://freetoolsforpeople.com/ai-proposal-studio](https://freetoolsforpeople.com/ai-proposal-studio)
 - Repository: [https://github.com/foxandhenllc/foxhen-ai-proposal-studio](https://github.com/foxandhenllc/foxhen-ai-proposal-studio)
 
 ## What It Does
