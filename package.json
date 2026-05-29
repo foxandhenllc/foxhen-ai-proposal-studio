@@ -39,5 +39,6 @@
     "studio",
     "tool",
     "workflow-tools"
-  ]
+  ],
+  "license": "MIT"
 }

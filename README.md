@@ -1,5 +1,7 @@
 # AI Proposal Studio
 
+[![Build](https://github.com/foxandhenllc/foxhen-ai-proposal-studio/actions/workflows/build.yml/badge.svg)](https://github.com/foxandhenllc/foxhen-ai-proposal-studio/actions/workflows/build.yml)
+
 Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity into a structured client proposal package.
 
 ![Demo screenshot](docs/demo-screenshot.png)
@@ -16,7 +18,7 @@ Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity
 - Calculates a transparent complexity score, client-facing price range, and private internal estimate view.
 - Exports a client-friendly Markdown proposal, AI prompt pack JSON, and full proposal snapshot JSON.
 - Autosaves the editable project in browser localStorage, with reset-to-sample and portable project JSON import/export.
-- Runs fully static in React + TypeScript + Vite with no backend, auth, secrets, real data, or live model calls.
+- Runs fully static in React + TypeScript + Vite with no backend, auth, credentials, real data, or live model calls.
 
 ## Use Cases
 
@@ -59,6 +61,13 @@ Fox & Hen public-safe proposal/scoping assistant for turning a rough opportunity
 
 **Why this repo is useful:** It improves proposal quality by making scope, risk, price logic, and acceptance criteria explicit before sending.
 
+## Open Source Readiness
+
+- MIT licensed for reuse, remixing, and client-safe adaptation.
+- GitHub Actions build workflow runs install, typecheck, tests when present, and production build.
+- Contribution guide, roadmap, and issue templates are included for public collaboration.
+- Public-safe data policy keeps examples fictional and reviewable.
+
 ## Local Run
 
 ```bash
@@ -79,6 +88,10 @@ A copy-ready CI workflow lives at `docs/github-actions/build.yml.example`; move 
 ## Public-Safe Scope
 
 This is a static frontend demo with fictional fixture data. It includes no production data, credentials, real contacts, backend, auth, external service calls, or live AI model calls.
+
+## Contributing
+
+See `CONTRIBUTING.md` for public-safe contribution rules, local validation commands, and good first contribution ideas. Roadmap items live in `ROADMAP.md`.
 
 ## License
 
